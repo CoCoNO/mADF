@@ -1,12 +1,10 @@
 package javaapplication1;
-
-import java.lang.String;
-import java.util.Hashtable;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.util.LinkedList;
 
 
 /**
@@ -15,17 +13,24 @@ import java.util.Hashtable;
  */
 public class State {
     String name;
-    Hashtable< State,Character > transitions;
-    Boolean finale;
-    public State(String _name,boolean _finale )
+    LinkedList<Transition> transitions;
+    boolean finale;
+    boolean marked;
+    
+    public State(String _name, boolean _finale )
     {
         name=_name;
         finale=_finale;
-        transitions= new Hashtable< State,Character >();
+        transitions= new LinkedList<Transition>();
     }
     
-    public void addTransition(char input,State goTo)
-    {
-        transitions.put(goTo,input);
+
+	public boolean equals(State st) {
+		// TODO Auto-generated method stub
+		return this.transitions.equals(st.transitions);
+	}
+
+	public void addTransition(char input,State goTo){
+        transitions.add( new Transition( input, goTo) );
     }
 }

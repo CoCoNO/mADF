@@ -1,4 +1,4 @@
-package utilities;
+package utils;
 
 public class Utilities {
 	public static boolean aimingNullKA ( Object ob ) {

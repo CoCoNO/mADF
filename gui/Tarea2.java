@@ -24,10 +24,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-
-import utilities.Utilities;
 
 
 public class Tarea2 extends JFrame {
@@ -43,7 +40,7 @@ public class Tarea2 extends JFrame {
 	
 	// Methods start here.
 	public Tarea2 () { // This is the very basic set up for the frame.
-		this.setTitle ( "Tarea 2 - Autómatas Finitos Deterministas" );
+		this.setTitle ( "Minimizador Automatas Finitos Deterministas" );
 		this.setSize( 800, 720);
 		this.setLocationRelativeTo( null );
 		this.setDefaultCloseOperation( EXIT_ON_CLOSE );
@@ -95,8 +92,8 @@ public class Tarea2 extends JFrame {
 		row2.setLayout( new BorderLayout() );
 		JPanel row3 = new JPanel();
 		row3.setLayout( new BorderLayout() );
-		JPanel row4 = new JPanel();
-		row4.setLayout( new BorderLayout() );
+//		JPanel row4 = new JPanel();
+//		row4.setLayout( new BorderLayout() );
 		JPanel row5 = new JPanel();
 		row5.setLayout( new BorderLayout() );
 		JPanel row6 = new JPanel();
@@ -105,19 +102,19 @@ public class Tarea2 extends JFrame {
 		grid.add( row1 );
 		grid.add( row2 );
 		grid.add( row3 );
-		grid.add( row4 );
+//		grid.add( row4 );
 		grid.add( row5 );
 		grid.add( row6 );
 		
-		JLabel iteso = new JLabel( itesologo );
-		row1.add( iteso, BorderLayout.WEST );
-		row1.setBackground( new Color ( 90, 90, 90 ) );
-		JLabel author = new JLabel( "Alejandro Ruiz Mendoza - is684522" );
-		author.setFont( new Font ( "TimeRoman", Font.BOLD + Font.ITALIC, 18 ) );
-		author.setForeground( Color.BLUE );
-		author.setHorizontalAlignment( SwingConstants.CENTER );
-		author.setBorder( BorderFactory.createEmptyBorder(0, 0, 0, 10) );
-		row1.add( author, BorderLayout.EAST );
+//		JLabel iteso = new JLabel( itesologo );
+//		row1.add( iteso, BorderLayout.WEST );
+//		row1.setBackground( new Color ( 90, 90, 90 ) );
+//		JLabel author = new JLabel( "Alejandro Ruiz Mendoza - is684522" );
+//		author.setFont( new Font ( "TimeRoman", Font.BOLD + Font.ITALIC, 18 ) );
+//		author.setForeground( Color.BLUE );
+//		author.setHorizontalAlignment( SwingConstants.CENTER );
+//		author.setBorder( BorderFactory.createEmptyBorder(0, 0, 0, 10) );
+//		row1.add( author, BorderLayout.EAST );
 		
 		// Preparing all the other rows (The data rows).
 		// Fonts for everybody!
@@ -131,15 +128,15 @@ public class Tarea2 extends JFrame {
 		JLabel label3 = new JLabel( "Input all final states included in F:" ); 
 		label3.setFont( new Font ( "Courier New", Font.BOLD + Font.ITALIC, 12 ) );
 		label3.setToolTipText( "Example: q0, q1" );
-		JLabel label4 = new JLabel( "Input the String you want to validate:" ); 
-		label4.setFont( new Font ( "Courier New", Font.BOLD + Font.ITALIC, 12 ) );
-		label4.setToolTipText( "Example: abbbadffac" );
+//		JLabel label4 = new JLabel( "Input the String you want to validate:" ); 
+//		label4.setFont( new Font ( "Courier New", Font.BOLD + Font.ITALIC, 12 ) );
+//		label4.setToolTipText( "Example: abbbadffac" );
 		
 		// Adding the just-created labels to every single row on my grid.
 		row2.add( label1, BorderLayout.NORTH );
 		row3.add( label2, BorderLayout.NORTH );
 		row4.add( label3, BorderLayout.NORTH );
-		row5.add( label4, BorderLayout.NORTH );
+//		row5.add( label4, BorderLayout.NORTH );
 		
 		// Creating the text field in which the user will input the data:
 		JTextField alphabetField = new JTextField();
@@ -151,9 +148,9 @@ public class Tarea2 extends JFrame {
 		JTextField finalField = new JTextField();
 		finalField.setColumns( 64 );
 		finalField.setToolTipText( "Example: q0, q1" );
-		JTextField stringField = new JTextField();
-		stringField.setColumns( 64 );
-		stringField.setToolTipText( "Example: abbbadffac" );
+//		JTextField stringField = new JTextField();
+//		stringField.setColumns( 64 );
+//		stringField.setToolTipText( "Example: abbbadffac" );
 		
 		// This is a programming trick. :B
 		JPanel flow1 = new JPanel();
@@ -162,29 +159,29 @@ public class Tarea2 extends JFrame {
 		flow1.setLayout( new FlowLayout() );
 		JPanel flow3 = new JPanel();
 		flow1.setLayout( new FlowLayout() );
-		JPanel flow4 = new JPanel();
-		flow1.setLayout( new FlowLayout() );
+//		JPanel flow4 = new JPanel();
+//		flow1.setLayout( new FlowLayout() );
 		// Adding my new flow layouts to the grid.
 		row2.add( flow1, BorderLayout.WEST );
 		row3.add( flow2, BorderLayout.WEST );
-		row4.add( flow3, BorderLayout.WEST );
-		row5.add( flow4, BorderLayout.WEST );
+//		row4.add( flow3, BorderLayout.WEST );
+//		row5.add( flow4, BorderLayout.WEST );
 		
 		// Adding the text fields to the flow layouts.
 		flow1.add( alphabetField );
 		flow2.add( statesField );
 		flow3.add( finalField );
-		flow4.add( stringField );
+//		flow4.add( stringField );
 		// Some buttons so the user can input his/her information.
 		JButton button1 = new JButton("Input");
 		JButton button2 = new JButton("Input");
 		JButton button3 = new JButton("Input");
-		JButton button4 = new JButton("Input");
+//		JButton button4 = new JButton("Input");
 		// Adding buttons to panel.
 		flow1.add(button1);
 		flow2.add(button2);
 		flow3.add(button3);
-		flow4.add(button4);
+//		flow4.add(button4);
 
 		// Adding the events so the buttons on frame will trigger some tasks.
 		button1.addActionListener(new ActionListener() {
@@ -243,28 +240,28 @@ public class Tarea2 extends JFrame {
 			}
 		} );
 
-		button4.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				w = removeAllWhiteSpaces( stringField.getText() );
-				
-				char[] array = w.toCharArray();
-				for ( char c : array ) {
-					if ( ! alphabet.contains( Character.toString( c ) ) ) {
-						w = null;
-						JOptionPane.showMessageDialog( null,
-							    "Some elements on your string are not included on the alphabet.\nDeleting inputted string...\nMake sure all your string symbols are included on alphabet.",
-							    "Wrong data inputted !",
-							    JOptionPane.ERROR_MESSAGE);
-						break;
-					} 
-				}	
-				startTheAction ();
-				table.createTableHeader();
-				table.addingCells();
-			}
-		} );
+//		button4.addActionListener(new ActionListener() {
+//
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				w = removeAllWhiteSpaces( stringField.getText() );
+//				
+//				char[] array = w.toCharArray();
+//				for ( char c : array ) {
+//					if ( ! alphabet.contains( Character.toString( c ) ) ) {
+//						w = null;
+//						JOptionPane.showMessageDialog( null,
+//							    "Some elements on your string are not included on the alphabet.\nDeleting inputted string...\nMake sure all your string symbols are included on alphabet.",
+//							    "Wrong data inputted !",
+//							    JOptionPane.ERROR_MESSAGE);
+//						break;
+//					} 
+//				}	
+//				startTheAction ();
+//				table.createTableHeader();
+//				table.addingCells();
+//			}
+//		} );
 		// row6.setBackground( Color.BLACK );
 		
 		// THIS IS ALL ABOUT THE LAST ROW:

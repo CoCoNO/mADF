@@ -6,6 +6,7 @@
     package javaapplication1;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class Automaton {
     State first;
     ArrayList<State> states;
-    ArrayList<State> alphabet;
+    ArrayList<Character> alphabet;
     boolean lastResult;
     public Automaton()
     {
@@ -22,7 +23,7 @@ public class Automaton {
         lastResult=false;
         
         states= new ArrayList<State>() ;
-        alphabet= new ArrayList<State>() ;
+        alphabet= new ArrayList<Character>() ;
     }
     
     public void setStates(ArrayList<State> _states)
@@ -44,6 +45,42 @@ public class Automaton {
     {
         //DoStuff;
         return false;
+    }
+    
+    public void mergeStates(State s1, State s2 ){
+    	String nState = s1.name + s2.name; //Concatenación de los nombres de ambos estados a combinar
+    	
+    	for(State s: this.states) //Ciclo for each para cada uno de los estados
+    		for(Transition t: s.transitions) //Ciclo for each para revisar cada transición
+    			if(t.nextState.equals(s1) || t.nextState.equals(s2)) //Se revisa si la transición contiene alguno de los estados a reemplazar.
+    				t.nextState.name = nState; 
+
+    	s1.name = nState;
+    	states.remove(s2);
+ 
+    }
+    
+    public void  depthSearch(){ //Busqueda a profundidad para eliminar los nodos no accesibles
+    	State ini = this.first;
+    	State actualState = ini;
+    	Stack<State> toVisit = new Stack<State>();
+        ArrayList<State> visited = new ArrayList<State>();
+
+    	do{
+    		for (Transition trans : actualState.transitions) {
+    			toVisit.add(trans.nextState);
+			}
+    		
+    		visited.add(actualState);
+    			
+    		for (State state : visited) {
+				if(state.equals(toVisit.peek())) toVisit.pop();
+				else actualState = toVisit.pop();
+			}
+    	}while( !toVisit.empty());
+    	
+    	
+    	
     }
     
     
