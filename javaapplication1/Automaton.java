@@ -79,8 +79,8 @@ public class Automaton {
 			}
     	}while( !toVisit.empty());
     	
-    	
-    	
+    	this.states.clear(); //Se borra y se vuelve a llenar con los nodos visitados
+    	this.states.addAll(visited);
     }
     
     
