@@ -1,0 +1,23 @@
+
+LENGUAJES DE COMPUTACIÓN
+
+INGENIERÍA EN SISTEMAS COMPUTACIONALES
+
+TAREA 3 – MINIMIZAR AFD
+
+MAURICIO LANDEROS 
+JOAQUIN ESCALANTE
+KEVIN CRUZ
+ALEJANDRO COVARRUBIAS
+CRISS FRANCO
+ALEX RUIZ
+ISRAEL VARGAS
+JAIRO LEDESMA
+Objetivo
+Esta tarea consiste en minimizar un AFD, ingresando la quíntupla y saliendo con la mayoría de estados minimizados posibles.
+Propiedad
+Se sigue como base la propiedad “marcar”, que termina y determina todos los pares de estados distinguibles (una secuencia de entrada la cual causa secuencias de salida diferentes) pero se puede hacer uso de otro algoritmo para llegar a la solución.
+Relación con el tema
+Esta tarea tiene que ver con la teoría de autómatas finitos determinista, justo antes de llegar a las expresiones regulares, además de poder comprobar que para llegar a minimizar el AFD no solamente existe una solución. 
+Conclusiones
+El trabajo en un equipo tan grande es difícil, hay pocas tareas y muchos integrantes, aunque el ejercicio sirve para terminar de comprender los AFD y como minimizarlos, ya que con la práctica se hace todo mucho más claro. 
